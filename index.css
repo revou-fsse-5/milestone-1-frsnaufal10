@@ -11,6 +11,10 @@ header {
     background-color: #333;
     color: white;
     padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 header .container {
@@ -64,6 +68,7 @@ header nav ul li a:hover {
     color: white;
     text-align: center;
     padding: 4rem 1rem;
+    margin-top: 80px; /* Adjust for sticky header */
 }
 
 .translucent-background {
@@ -97,7 +102,7 @@ section h2 {
 
 .about {
     position: relative;
-    background: url('image/hero.jpg') no-repeat center center/cover;
+    background: url('image/about.jpg') no-repeat center center/cover;
     background-attachment: fixed;
     color: white;
     text-align: center;
@@ -120,7 +125,7 @@ section h2 {
     background-color: #555;
 }
 
-.services, .portfolio {
+.services, .portfolio, .testimonials, .blog {
     background-color: #f5f5f5;
 }
 
@@ -129,27 +134,32 @@ section h2 {
     color: white;
 }
 
-.service-grid {
+.service-grid, .testimonial-grid, .blog-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
 }
 
-.service-item {
+.service-item, .testimonial-item, .blog-item {
     text-align: center;
     padding: 1rem;
     border: 1px solid #ddd;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.service-item img {
+.service-item img, .testimonial-img, .blog-item img {
     width: 100%;
+    max-width: 500px; /* Set max-width for images */
     height: auto;
     display: block;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem;
 }
 
-.service-item:hover {
+.testimonial-img {
+    border-radius: 50%; /* Circular border for testimonial images */
+}
+
+.service-item:hover, .testimonial-item:hover, .blog-item:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -170,8 +180,10 @@ section h2 {
 
 .gallery-item img {
     width: 100%;
+    max-width: 500px; /* Set max-width for images */
     height: auto;
     display: block;
+    margin: 0 auto;
 }
 
 .gallery-item p {
@@ -181,6 +193,77 @@ section h2 {
 .gallery-item:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact-info {
+    flex: 1 1 45%;
+}
+
+.map-container {
+    flex: 1 1 45%;
+    margin-top: 2rem;
+}
+
+iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+}
+
+.blog-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog-popup:target {
+    display: flex;
+}
+
+.popup-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 90%; /* Adjust max-width to ensure it fits well on all screens */
+    width: 90%;
+    max-height: 90%; /* Ensure the popup doesn't exceed the screen height */
+    overflow-y: auto; /* Add scroll if content exceeds max-height */
+    position: relative;
+}
+
+.popup-content img {
+    width: 100%;
+    max-width: 300px; /* Ensure image fits within the popup */
+    height: auto;
+    margin: 0 auto 1rem;
+    display: block; /* Center the image */
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.close-popup:hover {
+    color: #555;
 }
 
 footer {
@@ -201,31 +284,35 @@ footer p {
     }
 
     header nav ul {
-        flex-direction: column;
+        flex-direction: row; /* Make sure the navbar is horizontal on small devices */
         align-items: center;
     }
 
     header nav ul li {
-        margin: 0.5rem 0;
+        margin-left: 0.5rem;
     }
 
     .gallery-item {
         flex: 1 1 calc(50% - 1rem);
     }
 
-    .service-grid {
+    .service-grid, .testimonial-grid, .blog-grid {
         grid-template-columns: 1fr;
+    }
+
+    .contact-container {
+        flex-direction: column;
     }
 }
 
 @media (max-width: 480px) {
     header nav ul {
-        flex-direction: column;
+        flex-direction: row; /* Ensure the navbar remains horizontal */
         align-items: center;
     }
 
     header nav ul li {
-        margin: 0.5rem 0;
+        margin: 0.5rem;
     }
 
     .gallery-item {
@@ -246,6 +333,15 @@ footer p {
 
     .service-item, .gallery-item p {
         font-size: 0.875rem;
+    }
+
+    .contact-info, .map-container {
+        flex: 1 1 100%;
+        margin-top: 1rem;
+    }
+
+    iframe {
+        height: 200px;
     }
 }
 
