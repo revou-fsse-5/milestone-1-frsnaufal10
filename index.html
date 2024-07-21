@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <header>
+    <header class="sticky">
         <div class="container">
             <img src="image/graharsa_logo.jpg" alt="Graharsa Property Management Logo" class="header-logo">
             <h1>Graharsa Property Management</h1>
@@ -17,6 +17,8 @@
                     <li><a href="#about">Tentang Kami</a></li>
                     <li><a href="#services">Layanan</a></li>
                     <li><a href="#portfolio">Portofolio</a></li>
+                    <li><a href="#testimonials">Testimonial</a></li>
+                    <li><a href="#blog">Blog</a></li>
                     <li><a href="#contact">Kontak</a></li>
                 </ul>
             </nav>
@@ -81,15 +83,78 @@
         </div>
     </section>
 
-    <section id="contact" class="contact">
+    <section id="testimonials" class="testimonials">
         <div class="container">
-            <h2>Kontak Kami</h2>
-            <p>Hubungi kami melalui informasi di bawah ini:</p>
-            <ul>
-                <li>Email: info@graharsaproperty.com</li>
-                <li>Telepon: +62 123 4567 890</li>
-                <li>Alamat: Jl. Contoh No. 123, Jakarta, Indonesia</li>
-            </ul>
+            <h2>Testimonial</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-item">
+                    <img src="image/budi_santoso.jpg" alt="Budi Santoso" class="testimonial-img">
+                    <p>"Layanan yang sangat profesional dan responsif. Graharsa Property Management membantu saya mengelola properti saya dengan sangat baik."</p>
+                    <p><strong>- Budi Santoso</strong></p>
+                </div>
+                <div class="testimonial-item">
+                    <img src="image/siti_aisyah.jpg" alt="Siti Aisyah" class="testimonial-img">
+                    <p>"Kami sangat puas dengan layanan yang diberikan. Tim Graharsa sangat berpengalaman dan selalu siap membantu."</p>
+                    <p><strong>- Siti Aisyah</strong></p>
+                </div>
+                <!-- Tambahkan lebih banyak testimonial sesuai kebutuhan -->
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2>Blog</h2>
+            <div class="blog-grid">
+                <div class="blog-item">
+                    <h3>Tantangan dan Peluang dalam Manajemen Properti di Era Digital</h3>
+                    <img src="image/blog1.jpg" alt="Tantangan dan Peluang dalam Manajemen Properti di Era Digital">
+                    <a href="#blog1" class="cta-button">Baca Selengkapnya</a>
+                </div>
+                <div class="blog-item">
+                    <h3>Tips Memilih Properti Investasi yang Menguntungkan</h3>
+                    <img src="image/blog2.jpg" alt="Tips Memilih Properti Investasi yang Menguntungkan">
+                    <a href="#blog2" class="cta-button">Baca Selengkapnya</a>
+                </div>
+                <!-- Tambahkan lebih banyak artikel blog sesuai kebutuhan -->
+            </div>
+        </div>
+    </section>
+
+    <section id="blog1" class="blog-popup">
+        <div class="popup-content">
+            <a href="#" class="close-popup">&times;</a>
+            <h3>Tantangan dan Peluang dalam Manajemen Properti di Era Digital</h3>
+            <img src="image/blog1.jpg" alt="Tantangan dan Peluang dalam Manajemen Properti di Era Digital">
+            <p>Dengan kemajuan teknologi, manajemen properti mengalami perubahan besar. Artikel ini membahas tantangan dan peluang yang dihadapi industri ini.</p>
+            <p>Perusahaan perlu beradaptasi dengan teknologi terbaru untuk tetap kompetitif. Ini termasuk penggunaan sistem manajemen properti digital, pemasaran online, dan lain-lain.</p>
+        </div>
+    </section>
+
+    <section id="blog2" class="blog-popup">
+        <div class="popup-content">
+            <a href="#" class="close-popup">&times;</a>
+            <h3>Tips Memilih Properti Investasi yang Menguntungkan</h3>
+            <img src="image/blog2.jpg" alt="Tips Memilih Properti Investasi yang Menguntungkan">
+            <p>Investasi properti bisa sangat menguntungkan jika dilakukan dengan benar. Berikut adalah beberapa tips untuk memilih properti investasi yang tepat.</p>
+            <p>Pertimbangkan lokasi, potensi pertumbuhan nilai properti, dan analisis pasar sebelum membuat keputusan investasi. Selain itu, diversifikasi portofolio properti Anda untuk mengurangi risiko.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container contact-container">
+            <div class="contact-info">
+                <h2>Kontak Kami</h2>
+                <p>Hubungi kami melalui informasi di bawah ini:</p>
+                <ul>
+                    <li>Email: info@graharsaproperty.com</li>
+                    <li>Telepon: +62 123 4567 890</li>
+                    <li>Alamat: Jl. Contoh No. 123, Jakarta, Indonesia</li>
+                </ul>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126904.41125589664!2d106.6894296!3d-6.2293865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1c5a9b52e83%3A0x202d7e7c4fecd6e7!2sJakarta!5e0!3m2!1sen!2sid!4v1594737648785!5m2!1sen!2sid" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
         </div>
     </section>
 
@@ -98,6 +163,5 @@
             <p>&copy; 2024 Graharsa Property Management. Semua Hak Dilindungi.</p>
         </div>
     </footer>
-
 </body>
 </html>
